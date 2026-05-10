@@ -6,6 +6,30 @@
 
 ---
 
+## 🐢 Turtle Diagram (Table Simulation)
+
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td width="25%" style="border: 3px solid white;"></td>
+<td align="center" width="25%" style="border: 3px solid white; background-color: #e6f3ff;"><strong>02-Roles (Who?)</strong></td>
+<td align="center" width="25%" style="border: 3px solid white; background-color: #e6f3ff;"><strong>05-Infrastructure (Using What?)</strong></td>
+<td width="25%" style="border: 3px solid white;"></td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>01-Input (With What Info?)</strong></td>
+<td align="center" colspan="2" style="border: 3px solid white; background-color: #cce5ff;"><strong>03-Process</strong></td>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>04-Output (Producing What?)</strong></td>
+</tr>
+<tr>
+<td style="border: 3px solid white;"></td>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>06-Instructions (How?)</strong></td>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>07-Metrics (How well?)</strong></td>
+<td style="border: 3px solid white;"></td>
+</tr>
+</table>
+
+---
+
 ## File List
 
 | ID | Aspect | Name | File | Description |

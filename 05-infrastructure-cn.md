@@ -39,10 +39,10 @@
 │   └── FAQ.md
 │
 └── references/                 # 参考文献文件夹
-    ├── VDA_Volume4.pdf          # VDA 标准原文
-    ├── AIAG_SPC_2nd.pdf         # AIAG 参考文件
+    ├── ISO_9001-2015.pdf        # 质量标准原文
+    ├── Industry_Standard_SPC.pdf  # 行业参考文件
     └── 行业法规/                 # 子文件夹：存放具体法规文件
-        └── IATF16949_2016.pdf
+        └── Quality_Mgmt_System.pdf
 ```
 
 ### 实例运行文件夹结构（每个任务执行时生成）
@@ -61,7 +61,7 @@
 │   └── ...
 │
 └── deliverables/               # 最终交付物
-    ├── 8D-Report-v1.docx
+    ├── Project-Report-v1.docx
     └── ...
 ```
 

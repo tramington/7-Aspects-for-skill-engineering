@@ -6,20 +6,65 @@
 
 ## 执行总流程
 
-```
-```mermaid
-flowchart TD
-    A["用户输入"] --> B["Step 0：触发判断\n意图识别 + 匹配评分"]
-    B --> C["Step 1：读取 Skill.md\n加载作业指导，解析配置"]
-    C --> D["Step 2：解析用户需求\n提取关键信息，填充模板"]
-    D --> E["Step 3：知识库查询\n相关知识 → 按引用次数排序"]
-    E --> F["Step 4：按设计步骤执行任务\n主体操作"]
-    F --> G["Step 5：错误处理与回退\n见错误处理规范"]
-    G --> H["Step 6：生成交付物\n输出文件，写入目标路径"]
-    H --> I["Step 7：记录运行日志\nlog.md + Report.md"]
-    I --> J["Step 8：呈现结果 + Approval Gate\n用户确认"]
-```
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>用户输入</strong></td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 0</strong><br>触发判断</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 1</strong><br>读取 SKILL.md</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 2</strong><br>解析用户需求</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 3</strong><br>知识库查询</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 4</strong><br>执行任务</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 5</strong><br>错误处理</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 6</strong><br>生成交付物</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 7</strong><br>记录运行日志</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff;"><strong>Step 8</strong><br>呈现结果 + Approval Gate</td>
+</tr>
+</table>
 
 ---
 
@@ -33,18 +78,20 @@ flowchart TD
 
 ## Step 3 — 知识库查询规范
 
-```
-发现相关知识条目（> 1 条）
-    │
-    ▼
-按引用次数从高到低排序
-    │
-    ▼
-按顺序引用，优先使用引用次数最高的知识
-    │
-    ▼
-[后台自动] 该知识条目引用次数 +1
-```
+<table style="border: none; border-collapse: collapse; width:100%;">
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">发现相关知识条目（> 1 条）</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">按引用次数从高到低排序</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">按顺序引用，优先使用引用次数最高的知识</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">[后台自动] 该知识条目引用次数 +1</td>
+</tr>
+</table>
 
 - **知识库中无相关内容**：主动从外部获取（网络搜索 / 用户提供），获取后记入知识库新建条目，并标注来源和日期
 - **外部获取失败**：跳过该知识，并在 Report.md 中注明"未能找到相关知识"

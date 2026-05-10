@@ -8,7 +8,7 @@
 
 ### 1. Direct Deliverable
 Results the user expects to get, e.g.:
-- Documents (8D report, quality analysis report)
+- Documents (project report, analysis document)
 - Presentation (PPT)
 - Spreadsheets (Excel, CSV)
 - Code files (Python, JavaScript)
@@ -40,27 +40,41 @@ Files that can be updated after Skill execution:
 | Execution summary | `Report.md` | Inside above directory |
 | Error record | `Error.md` | Inside above directory |
 | Temporary files | Place in `TMP/` subdirectory | `TMP/ocr_p1.png` |
-| Final deliverable | `<project>-<artifact>.<ext>` | `8D-BBP343-Report.docx` |
+| Final deliverable | `<project>-<artifact>.<ext>` | `Project-Report.docx` |
 
 ---
 
 ## Output Delivery Flow
 
-```
-Skill execution complete
-    │
-    ▼
-Generate process artifacts (log.md, Report.md, Error.md)
-    │
-    ▼
-Write deliverables to user-specified path / default working directory
-    │
-    ▼
-Present result summary + file paths to user
-    │
-    ▼
-[If Approval Gate involved] → Wait for user confirmation → Execute publish/send etc.
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">Skill execution complete</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">Generate process artifacts (log.md, Report.md, Error.md)</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">Write deliverables to user-specified path / default working directory</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">Present result summary + file paths to user</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff; padding: 10px;">[If Approval Gate involved] → Wait for user confirmation → Execute publish/send etc.</td>
+</tr>
+</table>
 
 ---
 

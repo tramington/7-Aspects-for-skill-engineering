@@ -8,7 +8,7 @@
 
 ### WorkBuddy Path Specifications
 
-> Skill files are统一 stored in `~/.workbuddy/skills/<skill-name>/`
+> Skill files are stored in `~/.workbuddy/skills/<skill-name>/`
 > Instance run files (generated per execution) are stored in each workspace or specified directory.
 
 ### Skill Template Folder Structure
@@ -39,10 +39,10 @@
 │   └── FAQ.md
 │
 └── references/                 # Reference materials folder
-    ├── VDA_Volume4.pdf          # VDA standard original
-    ├── AIAG_SPC_2nd.pdf         # AIAG reference file
+    ├── ISO_9001-2015.pdf        # Quality standard original
+    ├── Industry_Standard_SPC.pdf  # Industry reference file
     └── industry-regulations/                 # Subfolder: store specific regulation files
-        └── IATF16949_2016.pdf
+        └── Quality_Mgmt_System.pdf
 ```
 
 ### Instance Run Folder Structure (generated per task execution)
@@ -61,7 +61,7 @@
 │   └── ...
 │
 └── deliverables/               # Final deliverables
-    ├── 8D-Report-v1.docx
+    ├── Project-Report-v1.docx
     └── ...
 ```
 

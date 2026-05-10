@@ -1,9 +1,6 @@
-# Aspect 1: AI Agent Input
+# Aspect1: AI Agent Input
 
-> Includes: **Goal** + Trigger Judgment + Data Sources
->
-> Goal: What am I doing? To what degree?
-> Monitoring: Goal achievement is tracked in Aspect 7 (Metrics).
+> Answers: Why does this Skill start? What information does it need to read?
 
 ---
 
@@ -13,13 +10,13 @@ Every Skill should declare its goal in the SKILL.md header:
 
 ```yaml
 goal: >
-  Guide quality engineers to complete an
-  8D report acceptable to customers,
-  following VDA Volume 4 standard.
+  Help users complete a
+  project report acceptable to clients,
+  following standard processes.
 scope:
   included:          # Applicable scope
-    - Quality issue complaint analysis
-    - 8D/G8D/CAPA report writing
+    - Quality issue analysis
+    - Project report writing
   excluded:          # Boundary limits
     - Personal safety, medical diagnosis assessments
     - Content requiring professional qualification (e.g., legal opinions)
@@ -36,21 +33,35 @@ scope:
 
 ### Decision Flow
 
-```
-```mermaid
-flowchart TD
-    A["User Input"] --> B["Step 1: Intent Recognition\nModel understands user semantics"]
-    B --> C["Step 2: Match Score Evaluation\nKeywords + semantic similarity ≥ threshold?"]
-    C --> D["Step 3: Compliance Check\nWithin goal scope?"]
-    D --> E["Skill Activated"]
-```
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step1: Intent Recognition</strong><br/>Model understands user semantics, judges relevance to this Skill</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step2: Match Score Evaluation</strong><br/>Keywords + semantic similarity ≥ threshold? → Activate<br/>Low match → Deactivate</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step3: Compliance Check</strong><br/>Within goal scope?<br/>Non-compliant → Reject with explanation</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff; padding: 10px;"><strong>Skill Activated</strong></td>
+</tr>
+</table>
 
 ### Match Score Rules
 
 | Bonus Item | Score |
 |--------|------|
-| Exact keyword hit ("8D", "FMEA", "MLA") | +0.6 |
+| Exact keyword hit ("report", "analysis", "assessment") | +0.6 |
 | Semantic similarity match | +0.3 |
 | User has used this Skill in historical records | +0.1 |
 
@@ -66,9 +77,9 @@ flowchart TD
 
 | Source | Description | Example |
 |------|------|------|
-| **User Request** | Initiated via direct conversation | "Help me write an 8D report" |
+| **User Request** | Initiated via direct conversation | "Help me write a project report" |
 | **Workflow Input** | Upstream Skill output | JSON structured data, PDF extraction results |
-| **External Data Source** | Laws/regulations, standards, knowledge base, MCP tools | VDA Volume 4 original text, DiDi ride prices |
+| **External Data Source** | Laws/regulations, standards, knowledge base, MCP tools | ISO standard original text, ride price query |
 
 ---
 

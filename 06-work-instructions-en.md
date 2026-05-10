@@ -23,12 +23,12 @@ Every Skill must include the following fields:
 
 ```yaml
 ---
-name: vda-8d-expert
-version: 1.2.0
-created: 2025-06-01
-updated: 2026-04-25
+name: example-skill
+version: 1.0.0
+created: 2025-01-01
+updated: 2025-06-15
 status: active                    # draft | review | pilot | active | deprecated
-owner: 阿明哥
+owner: Developer Name
 ---
 
 # Goal & Scope
@@ -97,4 +97,4 @@ All referenced standards/regulation files:
 - Stored in `references/` folder
 - Naming format: `<standard-number>_<version>.<ext>`
 - Multiple versions of same standard stored separately
-- Citation must include version number and source (e.g., "VDA Volume 4, 2nd Edition, 2020")
+- Citation must include version number and source (e.g., "ISO 9001, 2015 Edition")

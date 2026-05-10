@@ -23,12 +23,12 @@
 
 ```yaml
 ---
-name: vda-8d-expert
-version: 1.2.0
-created: 2025-06-01
-updated: 2026-04-25
+name: example-skill
+version: 1.0.0
+created: 2025-01-01
+updated: 2025-06-15
 status: active                    # draft | review | pilot | active | deprecated
-owner: 阿明哥
+owner: 开发者姓名
 ---
 
 # 目标与范围
@@ -97,4 +97,4 @@ acceptance:
 - 存放于 `references/` 文件夹
 - 命名格式：`<标准编号>_<版本>.<ext>`
 - 同一标准的多个版本分开存放
-- 引用时需注明版本号和来源（如"VDA Volume 4, 2nd Edition, 2020"）
+- 引用时需注明版本号和来源（如"ISO 9001, 2015 Edition"）

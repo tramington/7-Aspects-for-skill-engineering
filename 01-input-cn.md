@@ -1,9 +1,6 @@
 # 维度一：智能体输入（Input）
 
-> 包括：**目标（Goal）** + 触发判断 + 数据来源
->
-> 目标：我要做什么？做到什么程度？
-> 监控：目标达成情况在「07-性能指标」中追踪。
+> 回答：这个 Skill 因为什么而启动？需要读取哪些信息？
 
 ---
 
@@ -13,12 +10,12 @@
 
 ```yaml
 goal: >
-  引导质量工程师按 VDA Volume 4 标准，逐步完成一份
-  可被客户接受的 8D 报告。
+  帮助用户按标准流程，逐步完成一份
+  可被客户接受的项目报告。
 scope:
   included:          # 适用范围
-    - 质量问题投诉分析
-    - 8D/G8D/CAPA 报告编写
+    - 质量问题分析
+    - 项目报告编写
   excluded:          # 边界限制
     - 人身安全、医疗诊断相关的评估
     - 需要专业资质背书的内容（如法律意见书）
@@ -35,21 +32,35 @@ scope:
 
 ### 判断流程
 
-```
-```mermaid
-flowchart TD
-    A["用户输入"] --> B["Step 1：意图识别\n模型理解用户语义，\n判断是否与本 Skill 相关"]
-    B --> C["Step 2：匹配度评分\n关键词 + 语义相似度 ≥ 阈值？→ 激活\n匹配度低 → 不激活"]
-    C --> D["Step 3：合规性检查\n是否在目标范围之内？\n不合规 → 拒绝并说明原因"]
-    D --> E["Skill 激活"]
-```
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step 1：意图识别</strong><br/>模型理解用户语义，判断是否与本 Skill 相关</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step 2：匹配度评分</strong><br/>关键词 + 语义相似度 ≥ 阈值？→ 激活<br/>匹配度低 → 不激活</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;"><strong>Step 3：合规性检查</strong><br/>是否在目标范围之内？<br/>不合规 → 拒绝并说明原因</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff; padding: 10px;"><strong>Skill 激活</strong></td>
+</tr>
+</table>
 
 ### 匹配度评分规则
 
 | 加分项 | 分值 |
 |--------|------|
-| 精确关键词命中（"8D"、"FMEA"、"MLA"） | +0.6 |
+| 精确关键词命中（"报告"、"分析"、"评估"） | +0.6 |
 | 语义相似度匹配 | +0.3 |
 | 历史调用记录中该用户曾使用本 Skill | +0.1 |
 
@@ -65,9 +76,9 @@ flowchart TD
 
 | 来源 | 说明 | 示例 |
 |------|------|------|
-| **用户请求** | 直接对话发起 | "帮我写一份 8D 报告" |
+| **用户请求** | 直接对话发起 | "帮我写一份项目报告" |
 | **Workflow 输入** | 上游 Skill 输出 | JSON 结构化数据、PDF 提取结果 |
-| **外部数据源** | 法律法规、标准、知识库、MCP 工具 | VDA Volume 4 原文、滴滴打车价格 |
+| **外部数据源** | 法律法规、标准、知识库、MCP 工具 | ISO 标准原文、交通价格查询 |
 
 ---
 

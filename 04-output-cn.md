@@ -8,7 +8,7 @@
 
 ### 1. 直接交付物（Direct Deliverable）
 用户期望得到的结果，例如：
-- 文档（8D 报告、质量分析报告）
+- 文档（项目报告、分析文档）
 - 演示文稿（PPT）
 - 表格（Excel、CSV）
 - 代码文件（Python、JavaScript）
@@ -40,27 +40,41 @@ Skill 执行后可沉淀更新的文件：
 | 执行总结 | `Report.md` | 同上目录内 |
 | 错误记录 | `Error.md` | 同上目录内 |
 | 临时文件 | 放在 `TMP/` 子目录 | `TMP/ocr_p1.png` |
-| 最终交付物 | `<项目名>-<产物名>.<ext>` | `8D-BBP343-Report.docx` |
+| 最终交付物 | `<项目名>-<产物名>.<ext>` | `Project-Report.docx` |
 
 ---
 
 ## 输出交付流程
 
-```
-Skill 执行完成
-    │
-    ▼
-生成过程产物（log.md, Report.md, Error.md）
-    │
-    ▼
-交付物写入用户指定路径 / 默认工作目录
-    │
-    ▼
-向用户呈现结果摘要 + 文件路径
-    │
-    ▼
-[若涉及 Approval Gate] → 等待用户确认 → 执行发布/发送等后续操作
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">Skill 执行完成</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">生成过程产物（log.md, Report.md, Error.md）</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">交付物写入用户指定路径 / 默认工作目录</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td style="border: 3px solid white; background-color: #e6f3ff; padding: 10px;">向用户呈现结果摘要 + 文件路径</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff; padding: 10px;">[若涉及 Approval Gate] → 等待用户确认 → 执行发布/发送等后续操作</td>
+</tr>
+</table>
 
 ---
 

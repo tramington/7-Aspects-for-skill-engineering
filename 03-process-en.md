@@ -6,20 +6,65 @@
 
 ## Execution Flow
 
-```
-```mermaid
-flowchart TD
-    A["User Input"] --> B["Step 0：Trigger Judgment\nIntent + Match Score"]
-    B --> C["Step 1：Read SKILL.md\nLoad work instructions, parse config"]
-    C --> D["Step 2：Parse User Requirements\nExtract key info, fill templates"]
-    D --> E["Step 3：Knowledge Base Query\nRelated knowledge → sort by citation count"]
-    E --> F["Step 4：Execute Tasks\nMain operations"]
-    F --> G["Step 5：Error Handling\nSee Error Handling Spec"]
-    G --> H["Step 6：Generate Deliverables\nOutput files, write to target path"]
-    H --> I["Step 7：Record Run Log\nlog.md + Report.md"]
-    I --> J["Step 8：Present Results + Approval Gate\nUser confirms"]
-```
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>User Input</strong></td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 0</strong><br>Trigger Judgment</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 1</strong><br>Read SKILL.md</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 2</strong><br>Parse Requirements</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 3</strong><br>Knowledge Query</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 4</strong><br>Execute Tasks</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 5</strong><br>Error Handling</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 6</strong><br>Generate Deliverables</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Step 7</strong><br>Record Run Log</td>
+</tr>
+<tr>
+<td align="center" style="border: none; font-size: 20px;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #cce5ff;"><strong>Step 8</strong><br>Present Results<br>+ Approval Gate</td>
+</tr>
+</table>
 
 ---
 
@@ -33,18 +78,29 @@ See trigger mechanism in `01-input-en.md`. When match score < 0.7:
 
 ## Step 3 — Knowledge Base Query Specification
 
-```
-Discover related knowledge entries (> 1 entry)
-    │
-    ▼
-Sort by citation count, high to low
-    │
-    ▼
-Cite in order, prioritize highest-cited knowledge
-    │
-    ▼
-[Background] Citation count for that knowledge entry +1
-```
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Discover</strong><br>related knowledge (> 1 entry)</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Sort</strong><br>by citation count, high to low</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Cite</strong><br>in order, prioritize highest-cited</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;">↓</td>
+</tr>
+<tr>
+<td align="center" style="border: 3px solid white; background-color: #e6f3ff;"><strong>Update</strong><br>citations count +1</td>
+</tr>
+</table>
 
 - **No relevant content in knowledge base**: Proactively acquire from external sources (web search / user provided), then record in knowledge base as new entry, marking source and date
 - **External acquisition failed**: Skip that knowledge, note "Could not find relevant knowledge" in Report.md

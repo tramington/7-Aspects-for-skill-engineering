@@ -63,9 +63,9 @@ VDA 6.3 是德国汽车工业联合会（Verband der Automobilindustrie）发布
 
 **示例**：
 ```
-Goal: 帮助用户按 VDA 8D 标准完成 8D 报告
-Trigger: 用户输入包含 "8D" / "G8D" / "问题解决" + 匹配度 ≥ 0.7
-Data Sources: SKILL.md, past_cases/, templates/
+Goal: 帮助用户自动化处理重复性工作任务
+Trigger: 用户输入包含 "自动化" / "批量处理" + 匹配度 ≥ 0.7
+Data Sources: SKILL.md, templates/, config/
 ```
 
 ---
@@ -117,15 +117,15 @@ Error Handling:
 
 **关键要素**：
 - **交付物清单**：Skill 会产生哪些文件？（如报告、图表、日志）
-- **文件命名规范**：交付物如何命名？（如 `8D-Report-20260510-V1.0.docx`）
+- **文件命名规范**：交付物如何命名？（如 `Project-Report-20260510-V1.0.docx`）
 - **输出格式**：文本/Markdown/PDF/HTML？样式要求？
 
 **示例**：
 ```
 Deliverables:
-  - 8D-Report-YYYYMMDD-V1.0.docx (主报告)
-  - 8D-Evidence.zip (证据包)
-  - 8D-Summary.md (摘要)
+  - Report-YYYYMMDD-V1.0.docx (主报告)
+  - Evidence.zip (证据包)
+  - Summary.md (摘要)
 
 Naming Convention: {SkillName}-{Date}-V{Version}.{ext}
 ```
@@ -234,23 +234,23 @@ Improvement Trigger: Red KPI → 强制复盘 + 改进计划
 
 ## 五、参考案例
 
-### 案例 1：VDA 8D Expert Skill
+### 案例 1：会议纪要整理 Skill
 
-- **输入**：触发词 "8D" / "G8D"，匹配度 ≥ 0.7
-- **角色**：AI 引导完成 7 个步骤，关键操作需 Human 确认
-- **过程**：Step 0-7，错误分级 L0-L3
-- **输出**：8D-Report-YYYYMMDD-V1.0.docx
-- **基础设施**：依赖 `templates/8D-Template.docx`，模型 Claude 3.5 Sonnet
-- **作业指导**：SKILL.md v2.0，支持多标准（VDA 8D / G8D / CQI-20）
-- **绩效指标**：触发准确率 ≥ 95%，输出合规率 ≥ 90%
+- **输入**：触发词 "会议纪要" / "整理笔记"，匹配度 ≥ 0.7
+- **角色**：AI 自动提取要点，关键决策需 Human 确认
+- **过程**：Step 0-5，错误分级 L0-L3
+- **输出**：MeetingNotes-YYYYMMDD-V1.0.md
+- **基础设施**：依赖 `templates/MeetingNotes-Template.md`，模型 GPT-4o
+- **作业指导**：SKILL.md v1.0
+- **绩效指标**：输出准确率 ≥ 90%
 
-### 案例 2：WeChat Draft Upload Skill
+### 案例 2：微信公众号草稿上传 Skill
 
 - **输入**：触发词 "公众号" / "草稿箱"，匹配度 ≥ 0.6
-- **角色**：AI 转换 HTML、上传草稿，发送前需 Human 确认
+- **角色**：AI 转换 HTML，上传统稿，发送前需 Human 确认
 - **过程**：Step 0-5，错误处理 L0-L2
-- **输出**：微信草稿箱中的图文素材
-- **基础设施**：依赖微信公众号 API，AppID 写在 SKILL.md
+- **输出**：微信公众号草稿箱中的图文素材
+- **基础设施**：依赖微信公众号 API，AppID 写在 SKILL.md 中
 - **作业指导**：SKILL.md v1.0
 - **绩效指标**：上传成功率 ≥ 98%
 

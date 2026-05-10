@@ -63,9 +63,9 @@ These 7 elements align closely with AI Agent Skill development needs:
 
 **Example**:
 ```
-Goal: Help user complete 8D report following VDA 8D standards
-Trigger: User input contains "8D" / "G8D" / "problem solving" + match score ≥ 0.7
-Data Sources: SKILL.md, past_cases/, templates/
+Goal: Help user automate repetitive tasks
+Trigger: User input contains "automate" / "batch process" + match score ≥ 0.7
+Data Sources: SKILL.md, templates/, config/
 ```
 
 ---
@@ -103,7 +103,7 @@ Step 0: Read SKILL.md and MEMORY.md
 Step 1: Execute core logic
 Step 2: Generate output
 Error Handling:
-  - L0: Auto-fix (e.g.,补全缺失参数)
+  - L0: Auto-fix (e.g., missing param auto-completion)
   - L1: Retry 3 times
   - L2: Pause, show options for Human to choose
   - L3: Terminate, write Error.md
@@ -117,15 +117,15 @@ Error Handling:
 
 **Key Elements**:
 - **Deliverable List**: What files does the Skill produce? (e.g., reports, charts, logs)
-- **File Naming Convention**: How are deliverables named? (e.g., `8D-Report-20260510-V1.0.docx`)
+- **File Naming Convention**: How are deliverables named? (e.g., `Project-Report-20260510-V1.0.docx`)
 - **Output Format**: Text / Markdown / PDF / HTML? Style requirements?
 
 **Example**:
 ```
 Deliverables:
-  - 8D-Report-YYYYMMDD-V1.0.docx (main report)
-  - 8D-Evidence.zip (evidence package)
-  - 8D-Summary.md (summary)
+  - Report-YYYYMMDD-V1.0.docx (main report)
+  - Evidence.zip (evidence package)
+  - Summary.md (summary)
 
 Naming Convention: {SkillName}-{Date}-V{Version}.{ext}
 ```
@@ -234,15 +234,15 @@ Use the **Skill Development Checklist** (see README) to confirm each item:
 
 ## 5. Reference Cases
 
-### Case 1: VDA 8D Expert Skill
+### Case 1: Meeting Notes Organizer Skill
 
-- **Input**: Trigger words "8D" / "G8D", match score ≥ 0.7
-- **Role**: AI guides through 7 steps, critical operations require Human confirmation
-- **Process**: Step 0-7, error levels L0-L3
-- **Output**: 8D-Report-YYYYMMDD-V1.0.docx
-- **Infrastructure**: Depends on `templates/8D-Template.docx`, model Claude 3.5 Sonnet
-- **Work Instructions**: SKILL.md v2.0, supports multiple standards (VDA 8D / G8D / CQI-20)
-- **Metrics**: Trigger accuracy ≥ 95%, output compliance rate ≥ 90%
+- **Input**: Trigger words "meeting notes" / "organize notes", match score ≥ 0.7
+- **Role**: AI auto-extracts key points, critical decisions require Human confirmation
+- **Process**: Step 0-5, error levels L0-L3
+- **Output**: MeetingNotes-YYYYMMDD-V1.0.md
+- **Infrastructure**: Depends on `templates/MeetingNotes-Template.md`, model GPT-4o
+- **Work Instructions**: SKILL.md v1.0
+- **Metrics**: Output accuracy ≥ 90%
 
 ### Case 2: WeChat Draft Upload Skill
 
