@@ -6,6 +6,26 @@
 
 ---
 
+## 🐢 乌龟图（Turtle Diagram）
+
+<table>
+<tr>
+<td align="center" width="33%"><strong>👤 02-角色 (Who?)</strong><br/>Human-AI 分工<br/>Approval Gate<br/><a href="02-role-cn.md">02-role-cn.md</a></td>
+<td align="center" width="33%"><strong>📋 06-作业指导 (How?)</strong><br/>SKILL.md 模板<br/>版本管理<br/><a href="06-work-instructions-cn.md">06-work-instructions-cn.md</a></td>
+<td align="center" width="33%"><strong>📊 07-性能指标 (How well?)</strong><br/>KPI + R/Y/G 阈值<br/>改进触发机制<br/><a href="07-metrics-cn.md">07-metrics-cn.md</a></td>
+</tr>
+<tr>
+<td align="center"><strong>📥 01-输入 (With What Info?)</strong><br/>Goal + Trigger + 数据来源<br/><a href="01-input-cn.md">01-input-cn.md</a></td>
+<td align="center" bgcolor="#f0f8ff"><strong>🔧 03-操作步骤 (Process)</strong><br/>Step 0: 读取 SKILL.md + MEMORY.md<br/>Step 1-7: 执行核心逻辑<br/>错误处理: L0/L1/L2/L3<br/><a href="03-process-cn.md">03-process-cn.md</a></td>
+<td align="center"><strong>🔧 05-基础设施 (Using What?)</strong><br/>文件存储结构<br/>模型接入 + MCP 工具<br/><a href="05-infrastructure-cn.md">05-infrastructure-cn.md</a></td>
+</tr>
+<tr>
+<td colspan="3" align="center"><strong>📤 04-输出 (Producing What?)</strong><br/>交付物清单 + 文件命名规范<br/><a href="04-output-cn.md">04-output-cn.md</a></td>
+</tr>
+</table>
+
+---
+
 ## 文件清单
 
 | 编号 | 维度 | 名称 | 文件 | 说明 |
