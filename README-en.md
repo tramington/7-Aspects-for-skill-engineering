@@ -8,31 +8,14 @@
 
 ## Turtle Diagram (Standard Layout)
 
-```
-                    ┌──────────────────┐      ┌──────────────────┐
-                    │  02-Roles        │      │ 05-Infrastructure│
-                    │ (02-role-en.md)  │      │(05-infrastructure-│
-                    │ Cross-cutting    │      │    en.md)        │
-                    └────────┬─────────┘      └────────┬─────────┘
-                             │                         │
-                             ▼                         ▼
-   ┌───────────────┐   ┌──────────────────────────────────────────┐   ┌───────────────┐
-   │ 01-Input      │──►│                                          │──►│ 04-Output     │
-   │(01-input-en.md)│   │      03-Process Steps (Skill process)    │   │(04-output-en.md)│
-   │Goal+Trigger+  │   │      (03-process-en.md)                  │   │ Deliverables  │
-   │  Data Sources │   │                                          │   │ + Artifacts   │
-   └───────────────┘   └──────────────┬───────────────────────────┘   └───────────────┘
-                                      │
-                       ┌──────────────┴───────────────┐
-                       │                              │
-                       ▼                              ▼
-              ┌──────────────────┐          ┌──────────────────┐
-              │ 06-Work          │◄────────►│ 07-Metrics       │
-              │ Instructions     │          │(07-metrics-en.md)│
-              │(06-work-instructions-│       │ Tracking+        │
-              │      en.md)      │          │ Thresholds+      │
-              │ SKILL.md Template│          │ Improvement      │
-              └──────────────────┘          └──────────────────┘
+```mermaid
+flowchart TD
+    Input["01-Input"] --> Process["03-Process"]
+    Process --> Output["04-Output"]
+    Roles["02-Roles"] -.-> Process
+    Infra["05-Infrastructure"] -.-> Process
+    WI["06-Work Instructions"] <-.-> Process
+    Metrics["07-Metrics"] <-.-> Process
 ```
 
 ---

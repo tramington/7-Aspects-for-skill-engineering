@@ -7,45 +7,18 @@
 ## Execution Flow
 
 ```
-User Input
-  │
-  ▼
-┌─────────────────────────────────────┐
-│ Step 0: Trigger Judgment (Intent + Match Score)│ ← See Aspect 1 trigger mechanism
-└──────────────┬──────────────────────┘
-               │  Match score ≥ 0.7 → Activate
-               ▼
-┌─────────────────────────────────────┐
-│ Step 1: Read SKILL.md               │  Load work instructions, parse config
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 2: Parse User Requirements      │  Extract key info, fill templates
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 3: Knowledge Base Query        │  Related knowledge → sort by citation count
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 4: Execute Tasks by Design     │  Main operations (see SKILL.md for details)
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 5: Error Handling & Rollback   │  See "Error Handling Spec" below
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 6: Generate Deliverables        │  Output files, write to target path
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 7: Record Run Log              │  log.md + Report.md
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ Step 8: Present Results + Approval Gate    │  User confirms → subsequent publish operations
-└─────────────────────────────────────┘
+```mermaid
+flowchart TD
+    A["User Input"] --> B["Step 0：Trigger Judgment\nIntent + Match Score"]
+    B --> C["Step 1：Read SKILL.md\nLoad work instructions, parse config"]
+    C --> D["Step 2：Parse User Requirements\nExtract key info, fill templates"]
+    D --> E["Step 3：Knowledge Base Query\nRelated knowledge → sort by citation count"]
+    E --> F["Step 4：Execute Tasks\nMain operations"]
+    F --> G["Step 5：Error Handling\nSee Error Handling Spec"]
+    G --> H["Step 6：Generate Deliverables\nOutput files, write to target path"]
+    H --> I["Step 7：Record Run Log\nlog.md + Report.md"]
+    I --> J["Step 8：Present Results + Approval Gate\nUser confirms"]
+```
 ```
 
 ---

@@ -37,25 +37,13 @@ scope:
 ### Decision Flow
 
 ```
-User Input
-  │
-  ▼
-┌──────────────────────┐
-│ Step 1: Intent Recognition       │  → Model understands user semantics, judges relevance to this Skill
-└──────┬────────────────┘
-       │
-       ▼
-┌──────────────────────┐
-│ Step 2: Match Score Evaluation     │  → Keywords + semantic similarity ≥ threshold? → Activate
-└──────┬────────────────┘  → Low match → Deactivate, prompt user or redirect to other Skill
-       │
-       ▼
-┌──────────────────────┐
-│ Step 3: Compliance Check     │  → Within goal scope? Does it trigger boundary limits?
-└──────┬────────────────┘  → Non-compliant → Reject and explain reason
-       │
-       ▼
-   Skill Activated
+```mermaid
+flowchart TD
+    A["User Input"] --> B["Step 1: Intent Recognition\nModel understands user semantics"]
+    B --> C["Step 2: Match Score Evaluation\nKeywords + semantic similarity ≥ threshold?"]
+    C --> D["Step 3: Compliance Check\nWithin goal scope?"]
+    D --> E["Skill Activated"]
+```
 ```
 
 ### Match Score Rules

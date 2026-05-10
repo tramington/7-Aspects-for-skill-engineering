@@ -8,30 +8,14 @@
 
 ## 乌龟图（标准布局）
 
-```
-                    ┌──────────────────┐      ┌──────────────────┐
-                    │   02-角色(Roles)  │      │  05-基础设施(Infra)│
-                    │ (02-role-cn.md)  │      │(05-infrastructure-│
-                    │  跨维度约束        │      │     cn.md)       │
-                    └────────┬─────────┘      └────────┬─────────┘
-                             │                         │
-                             ▼                         ▼
-   ┌───────────────┐   ┌──────────────────────────────────────────┐   ┌───────────────┐
-   │  01-输入      │──►│                                          │──►│  04-输出      │
-   │(01-input-cn.md)│   │       03-操作步骤 (Skill process)        │   │(04-output-cn.md)│
-   │ 目标+触发+数据 │   │      (03-process-cn.md)                  │   │ 交付物+过程产物 │
-   └───────────────┘   │                                          │   └───────────────┘
-                       └──────────────┬───────────────────────────┘
-                                      │
-                       ┌──────────────┴───────────────┐
-                       │                              │
-                       ▼                              ▼
-              ┌──────────────────┐          ┌──────────────────┐
-              │ 06-作业指导       │◄────────►│ 07-性能指标       │
-              │(06-work-instructions-│       │(07-metrics-cn.md)│
-              │      cn.md)      │          │ 监控+阈值+改进    │
-              │ SKILL.md模板     │          └──────────────────┘
-              └──────────────────┘
+```mermaid
+flowchart TD
+    Input["01-Input<br/>Goal + Trigger + Data"] --> Process["03-Process<br/>Execution Steps"]
+    Process --> Output["04-Output<br/>Deliverables"]
+    Roles["02-Roles<br/>Human-AI Division"] -.-> Process
+    Infra["05-Infrastructure<br/>File Structure + Models"] -.-> Process
+    WI["06-Work Instructions<br/>SKILL.md Template"] <-.-> Process
+    Metrics["07-Metrics<br/>KPIs + Thresholds"] <-.-> Process
 ```
 
 ---

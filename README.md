@@ -24,16 +24,14 @@ This framework decomposes any AI Agent/Skill into **7 auditable aspects**, mirro
 
 ## Turtle Diagram
 
-```
-         02-Roles        05-Infrastructure
-            │                   │
-            ▼                   ▼
-01-Input ─► 03-Process ─► 04-Output
-              │
-         ┌────┴────┐
-         ▼         ▼
-   06-Work    07-Metrics
-Instructions
+```mermaid
+flowchart TD
+    Input["01-Input"] --> Process["03-Process"]
+    Process --> Output["04-Output"]
+    Roles["02-Roles"] -.-> Process
+    Infra["05-Infrastructure"] -.-> Process
+    WI["06-Work Instructions"] <-.-> Process
+    Metrics["07-Metrics"] <-.-> Process
 ```
 
 ---
